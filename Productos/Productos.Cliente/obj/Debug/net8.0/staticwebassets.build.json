@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "Jaa1nGR/oZ8Jy3MVlSHEPjS4pxir8vOKTo9Ta+woGV8=",
+  "Hash": "sVX5vlwy+FWTu9LtqblI27qzMOcg/TdunDDF6g/6Ix8=",
   "Source": "Productos.Cliente",
   "BasePath": "_content/Productos.Cliente",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Server\\Productos.Server.csproj",
+      "Version": 2,
+      "Source": "Productos.Server",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "Productos.Cliente\\wwwroot",

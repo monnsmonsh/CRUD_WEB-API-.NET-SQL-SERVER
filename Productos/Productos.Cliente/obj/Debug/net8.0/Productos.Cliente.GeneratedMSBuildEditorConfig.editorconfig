@@ -34,8 +34,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/monnsmonsh/Documents/GitHubProyects/CRUD_WEB-API-.NET-SQL-SERVER/Productos/Productos.Cliente/Views/Producto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/monnsmonsh/Documents/GitHubProyects/CRUD_WEB-API-.NET-SQL-SERVER/Productos/Productos.Cliente/Views/Producto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/monnsmonsh/Documents/GitHubProyects/CRUD_WEB-API-.NET-SQL-SERVER/Productos/Productos.Cliente/Views/Producto/Inicio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5pY2lvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/monnsmonsh/Documents/GitHubProyects/CRUD_WEB-API-.NET-SQL-SERVER/Productos/Productos.Cliente/Views/Shared/Error.cshtml]

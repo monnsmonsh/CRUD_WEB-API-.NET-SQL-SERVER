@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{257567FA-964D-41DC-A15A-1ABE21226F21}|Productos.Server\\Productos.Server.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{257567FA-964D-41DC-A15A-1ABE21226F21}|Productos.Server\\Productos.Server.csproj|solutionrelative:productos.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\views\\producto\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\views\\producto\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\models\\productoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\models\\productoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\productos\\productos.cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CEF2E51-CE22-4B62-A704-317CEEA0B640}|Productos.Cliente\\Productos.Cliente.csproj|solutionrelative:productos.cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Server\\Program.cs",
+              "RelativeDocumentMoniker": "Productos.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Server\\Program.cs",
+              "RelativeToolTip": "Productos.Server\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T21:23:25.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Views\\Producto\\Index.cshtml",
               "RelativeDocumentMoniker": "Productos.Cliente\\Views\\Producto\\Index.cshtml",
@@ -42,25 +63,51 @@
               "RelativeToolTip": "Productos.Cliente\\Views\\Producto\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-23T07:47:20.567Z",
+              "WhenOpened": "2024-02-23T21:06:36.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Program.cs",
+              "RelativeDocumentMoniker": "Productos.Cliente\\Program.cs",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Program.cs",
+              "RelativeToolTip": "Productos.Cliente\\Program.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACkAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T20:48:57.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\appsettings.json",
-              "RelativeDocumentMoniker": "Productos.Cliente\\appsettings.json",
-              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\appsettings.json",
-              "RelativeToolTip": "Productos.Cliente\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-02-23T07:42:39.232Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Views\\Producto\\Create.cshtml",
+              "RelativeDocumentMoniker": "Productos.Cliente\\Views\\Producto\\Create.cshtml",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Views\\Producto\\Create.cshtml",
+              "RelativeToolTip": "Productos.Cliente\\Views\\Producto\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-23T21:06:03.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Productos.Cliente\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Productos.Cliente\\Controllers\\ProductoController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAiwBYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T20:54:27.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ProductoViewModel.cs",
               "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Models\\ProductoViewModel.cs",
               "RelativeDocumentMoniker": "Productos.Cliente\\Models\\ProductoViewModel.cs",
@@ -68,33 +115,20 @@
               "RelativeToolTip": "Productos.Cliente\\Models\\ProductoViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T07:42:33.759Z",
+              "WhenOpened": "2024-02-23T20:54:19.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "Productos.Cliente\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "Productos.Cliente\\Controllers\\ProductoController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAApAAAA",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Productos.Cliente\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Productos.Cliente\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T07:06:29.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Program.cs",
-              "RelativeDocumentMoniker": "Productos.Cliente\\Program.cs",
-              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Cliente\\Program.cs",
-              "RelativeToolTip": "Productos.Cliente\\Program.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwCYAAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T07:02:07.971Z",
+              "WhenOpened": "2024-02-23T20:54:23.509Z",
               "EditorCaption": ""
             }
           ]

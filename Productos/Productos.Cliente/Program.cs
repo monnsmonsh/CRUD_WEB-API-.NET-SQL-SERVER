@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Productos.Cliente
 {
     public class Program
@@ -13,6 +15,7 @@ namespace Productos.Cliente
             //
             ///add servicio de AddHttpClient ->para poder conectar a web api
             builder.Services.AddHttpClient();
+            //
 
 
             var app = builder.Build();
@@ -36,9 +39,11 @@ namespace Productos.Cliente
                 name: "default",
                  //modificamos la ruta para que nos aranque desde nuestro Controlador index
                  //pattern: "{controller=Home}/{action=Index}/{id?}");
-                 pattern: "{controller=Producto}/{action=Index}/{id?}");
+                 pattern: "{controller=Producto}/{action=create}/{id?}");
 
             app.Run();
         }
+
+        
     }
 }
