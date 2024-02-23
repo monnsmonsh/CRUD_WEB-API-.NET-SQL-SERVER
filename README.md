@@ -31,4 +31,87 @@
 
 - Listo todo esto podemos empezar a crear nuestro proyecto lo primero que tenemos que hacer es crear una carpeta con el nombre `Models` para esto damos click derecho sobre nuestro proyecto nos desplazamos hasta agregar y seleccionamos nueva carpeta
 <img src="/assets/img/10.png" width="80%">
-![alt text](image.png)
+
+- En la carpeta `Models` creamos una clase que no representara nuestra entidad para esto sobre la carpeta damos click derecho y `agregar` y seleccionamos `Clase...`
+<img src="/assets/img/11.png" width="80%">
+
+- Definimos los atrubutos de nuestra clase
+```C#
+public class NameClass
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public decimal precio { get; set; }
+}
+```
+
+- Si queremos podemos definir nuestros campos
+```C#
+    [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+    [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+    public string Nombre { get; set; } = null!;
+```
+- Despues de definir nuestra clase podemos proseguir a pasar nuestro contexto de datos ara esto sobre la carpeta damos click derecho y `agregar` y seleccionamos `Clase...`
+<img src="/assets/img/11.png" width="80%">
+
+- definimos nuestro `Contexto` de nuestra `NameClass`
+
+```C#
+//add DbContext para erede de DB
+public class NameContext : DbContext
+{
+    //Constructor
+    public NameContext(DbContextOptions<NameContext> options) : base(options)
+    {
+    }
+
+    //Creamos una propiedad Db Set para nuestra tbl
+    public DbSet<NameClass> NameClass { get; set; }
+
+    //Sobreescribimos un metodo _ para que el nombre de cada producto no se repita
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<NameClass>().HasIndex(c => c.Nombre).IsUnique();
+    }
+}
+```
+- Ahora nos vamos a configurar nuestra cadena de conexion con `SQL SERVER` para esto abrimos nuestro archivo que se encuentra en raiz con el nombre `appsettings.json` despues de `AllowedHost` definiendo nuestros datos de conexion `Catolog`(Nombre de la BD) `ID`(nombre de usario) `Password`(contraseña)
+```json
+//Configuramos nuestra cadena de conexion
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=(local);Initial Catalog=NAMEBD;Persist Security Info=True;User ID=USERSQL;Password=PASS-SQL;MultipleActiveResultSets=True;TrustServerCertificate=True"
+
+```
+- Despues nos dirigimos a `Program.cs` donde insertamos nuestro contexto de nuesta BD debajado de `builder.Services.AddControllers();`
+```C#
+    builder.Services.AddControllers();
+```
+- insertamos nuestro NameContext
+```C#
+    builder.Services.AddDbContext<NameContext>(o =>
+    {
+        o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    });
+```
+- Contodo esto listo podemos proceder a correr la migracion de base de datos para ello abrimos `Consola del Administrador` que se encuentra en la parte inferior izquierda del programa
+<img src="/assets/img/12.png" width="80%">
+
+- y corremos el siguiente `add-migration NameTbl` comando y esperamos a que realice la migracion de nuestra tabla a la base de datos
+```PM
+    add-migration NameTbl
+```
+
+- volvemos a nuestra consola para acer efectivos nuestros cambios y subirlos a nuestro `SQL SERVER`
+
+```PM
+    update-database
+```
+
+- Comprobamos que nuesta bd, dirigiendonos a `SQL Server` se creo en sql damos en `New Query`
+```sql
+    use DataBaseName
+    select * from Nametbl
+```
+<img src="/assets/img/13.png" width="80%">

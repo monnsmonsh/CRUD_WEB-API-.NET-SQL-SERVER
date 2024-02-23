@@ -1,4 +1,7 @@
 
+using Menu.Server.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Menu.Server
 {
     public class Program
@@ -10,6 +13,17 @@ namespace Menu.Server
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            //__
+            ////Inyectamos nuestro contexto de BD
+            builder.Services.AddDbContext<MenuContext>(o =>
+            {
+                o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+            //--------
+
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
