@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "Productos.Server.Controllers.ProductosController",
+    "Method": "CrearProducto",
+    "RelativePath": "api/Productos/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "producto",
+        "Type": "Productos.Server.Models.Producto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
