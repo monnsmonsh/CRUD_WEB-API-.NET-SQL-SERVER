@@ -1,9 +1,9 @@
 # Crear WEB´S API con .NET y SQL SERVER
 
-## Installation
+## Creacion de una Web api con asp.net
 
-Seleccionamos un Crear un Proyecto
-[Texto alternativo](/assets/img/01.png)
+Primero nos dirigimos a `Crear un Proyecto`
+[![Crear un Proyecto](/assets/img/01.png)]
 
 Seleccionamos un `Solucion en Blanco` y le damos `siguiente`
 [Texto alternativo](/assets/img/02.png)
