@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Productos.Server\\Controllers\\ProductosController.cs",
               "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Productos\\Productos.Server\\Controllers\\ProductosController.cs",
               "RelativeToolTip": "Productos.Server\\Controllers\\ProductosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAYAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAAGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-23T05:14:10.425Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Productos.Server\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T05:03:35.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T05:03:35.591Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Productos.Server\\Models\\Producto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T22:27:07.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T22:27:07.928Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Productos.Server\\Models\\ProductosContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T22:33:39.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T22:33:39.87Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "Productos.Server\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-02-22T22:39:00.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T22:39:00.831Z"
             }
           ]
         }
