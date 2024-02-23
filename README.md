@@ -2,11 +2,14 @@
 
 ## Creacion de una Web api con asp.net
 
+
+### Inicializacion de un Proyecto
+
 - Para inicializar un proyecto en Visual Studio lo primero que tenemos que realizar es dirigimos a `Crear un Proyecto`
-<img src="/assets/img/01.png" width="80%">
+    - <img src="/assets/img/01.png" width="80%">
 
 - Posteriormente seleccionamos  el tipo de proyecto que necesitemos en este caso seleccionamos una `Solucion en Blanco` y le damos en `siguiente`
-<img src="/assets/img/02.png" width="80%">
+    - <img src="/assets/img/02.png" width="80%">
 
 - Llegando hasta este paso definimos el nombre del proyecto y le damos en `Crear`
 <img src="/assets/img/03.png" width="80%">
@@ -52,6 +55,9 @@ public class NameClass
     [Required(ErrorMessage = "El campo {0} es obligatorio.")]
     public string Nombre { get; set; } = null!;
 ```
+
+### Conexion y Migracion a SQL SERVER 
+
 - Despues de definir nuestra clase podemos proseguir a pasar nuestro contexto de datos ara esto sobre la carpeta damos click derecho y `agregar` y seleccionamos `Clase...`
 <img src="/assets/img/11.png" width="80%">
 
@@ -115,3 +121,5 @@ public class NameContext : DbContext
     select * from Nametbl
 ```
 <img src="/assets/img/13.png" width="80%">
+
+### Creacion de Controladores del Proyecto
