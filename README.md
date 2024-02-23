@@ -3,7 +3,7 @@
 ## Creacion de una Web api con asp.net
 
 Para inicializar un proyecto en Visual Studio lo primero que tenemos que realizar es dirigimos a `Crear un Proyecto`
-<img src="/assets/img/01.png" width="300">
+<img src="/assets/img/01.png" width="80%">
 
 ![Crear un Proyecto](/assets/img/01.png)
 
