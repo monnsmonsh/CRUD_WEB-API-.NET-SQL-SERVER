@@ -3,19 +3,16 @@ using Menu.Server.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace Menu.Server.Migrations
 {
-    [DbContext(typeof(MenuContext))]
-    [Migration("20240223232504_Menu")]
-    partial class Menu
+    [DbContext(typeof(ProductosContext))]
+    partial class ProductosContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +21,7 @@ namespace Menu.Server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Menu.Server.Models.Menu", b =>
+            modelBuilder.Entity("Menu.Server.Models.Producto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +47,7 @@ namespace Menu.Server.Migrations
                     b.HasIndex("Nombre")
                         .IsUnique();
 
-                    b.ToTable("Menu");
+                    b.ToTable("Productos");
                 });
 #pragma warning restore 612, 618
         }

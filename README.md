@@ -2,7 +2,7 @@
 
 ## Creacion de una Web api con asp.net
 
-
+## Creacion de la API
 ### Inicializacion de un Proyecto
 
 - Para inicializar un proyecto en Visual Studio lo primero que tenemos que realizar es dirigimos a `Crear un Proyecto`
@@ -55,6 +55,7 @@ public class NameClass
     [Required(ErrorMessage = "El campo {0} es obligatorio.")]
     public string Nombre { get; set; } = null!;
 ```
+
 
 ### Conexion y Migracion a SQL SERVER 
 
@@ -122,4 +123,124 @@ public class NameContext : DbContext
 ```
 <img src="/assets/img/13.png" width="80%">
 
+
 ### Creacion de Controladores del Proyecto
+- Para empesar nuestro proyecto a controlar agregamos un controlador para nuestra API dando click derecho sobre la carpeta `Controller` moviendonos hasta `Agregar` y Selccionamos `Controlador`
+    - <img src="/assets/img/14.png" width="80%">
+
+    - se nos desplegara la siguiente ventana donde Seleccionaremos un Controlador de tipo API `Controlador de API: en blanco` le damos en agregar el le colocamos el nombre de nuestra clase `ClassController`
+        - <img src="/assets/img/15.png" width="80%">
+
+- Lo primero que realizamos en nuestro controlador es inyectar nuestro `_context` de nuestro base de datos debajo de nuestra `public class MenuController : ControllerBase`
+``` C#
+    [Route("api/[controller]")]
+    [ApiController]
+    public class NameClassContext : ControllerBase
+    {
+        //insertamos aqui
+    }
+```
+```C#
+    //inyectamos contexto de BD 
+    private readonly NameClassContext _context;
+    public ClassController(NameClassContext context)
+    {
+        _context = context;
+    }
+```
+- Ya con esto tendremos acceso a la base de datos de cualquier metodo del controlador
+    
+    -Metodo para Crear en la bd
+    ```C#
+        [HttpPost]
+        [Route("nombreRoute")]
+        //Metodo para guardar en BD
+        public async Task<IActionResult> CrearElemento(Elemento elemento)
+        {
+            //guardamos en BD en la tblname, pasando el parametro
+            await _context.tblName.AddAsync(elemento);
+
+            //guardamos cambios en BD
+            await _context.SaveChangesAsync();
+
+            //returnamos un mensaje de exito
+            return Ok();
+
+        }
+    ```
+
+    -Metodo `Get` para listar los elementos de la BD
+    ```C#
+        [HttpGet]
+        [Route("lista")]
+        //Metodo para listar
+        public async Task<ActionResult<IEnumerable<Producto>>> ListarProductos()
+        {
+
+            //Obtenemos la lista de productos de la BD
+            var productos = await _context.Productos.ToListAsync();
+
+            //dvolvemos lista de productos
+            return Ok(productos);
+
+        }
+    ```
+
+    -Metodo `Get` para visualizar  un solo elemento
+    ```C#
+        [HttpGet]
+        [Route("ver")]
+        //Metodo para consultar 
+        public async Task<IActionResult> VerProducto(int id)
+        {
+            Producto producto = await _context.Productos.FindAsync(id);
+
+            //validamos id
+            if (producto == null)
+            {
+                return NotFound();
+            }
+            return Ok(producto);
+        }
+    ```
+
+    -Metodo `Put` para editar un elemento
+    ```C#
+        [HttpPut]
+        [Route("editar")]
+        //Metodo para editar un producto
+        public async Task<IActionResult> ActualizarProducto(int id, Producto producto)
+        {
+            var productoExistente = await _context.Productos.FindAsync(id);
+
+            //sustituimos los valores
+            productoExistente.Nombre = producto.Nombre;
+            productoExistente.Descripcion = producto.Descripcion;
+            productoExistente.Precio = producto.Precio;
+
+            //guardamos los cambios en la BD
+            await _context.SaveChangesAsync();
+
+            return Ok();
+
+        }
+    ```
+
+    -Metodo `Delete` para eliminar un elemento
+    ```C#
+        [HttpDelete]
+        [Route("eliminar")]
+        //Metodo para editar un producto
+        public async Task<IActionResult> EliminarProducto(int id, Producto producto)
+        {
+            var productoeliminado = await _context.Productos.FindAsync(id);
+
+            //aplicamos metod del parametro
+            _context.Productos.Remove(productoeliminado);
+
+            await _context.SaveChangesAsync();
+            return Ok();
+
+        }
+    ```
+## Consumir la APi desde una WEB

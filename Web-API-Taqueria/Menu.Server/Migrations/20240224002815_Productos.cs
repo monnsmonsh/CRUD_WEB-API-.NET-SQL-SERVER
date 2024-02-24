@@ -5,13 +5,13 @@
 namespace Menu.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Menu : Migration
+    public partial class Productos : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Menu",
+                name: "Productos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -22,12 +22,12 @@ namespace Menu.Server.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Menu", x => x.Id);
+                    table.PrimaryKey("PK_Productos", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Menu_Nombre",
-                table: "Menu",
+                name: "IX_Productos_Nombre",
+                table: "Productos",
                 column: "Nombre",
                 unique: true);
         }
@@ -36,7 +36,7 @@ namespace Menu.Server.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Menu");
+                name: "Productos");
         }
     }
 }

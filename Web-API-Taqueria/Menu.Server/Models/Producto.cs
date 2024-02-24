@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Menu.Server.Models
 {
-    public class Menu
+    public class Producto
     {
         public int Id { get; set; }
 
@@ -16,9 +16,11 @@ namespace Menu.Server.Models
         [MaxLength(500, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         public string Descripcion { get; set; } = null!;
 
-        [Column(TypeName = "decimal(18,2)")]
-        [DisplayFormat(DataFormatString = "{0:C2}")]
+        [Column(TypeName = "decimal(18,2)")]//tipo decimal con 2 decimales
+        [DisplayFormat(DataFormatString = "{0:C2}")]//Formato de moneda
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public decimal Precio { get; set; }
+
+
     }
 }

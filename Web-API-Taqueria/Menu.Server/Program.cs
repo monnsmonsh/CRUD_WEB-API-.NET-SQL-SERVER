@@ -16,7 +16,7 @@ namespace Menu.Server
 
             //__
             ////Inyectamos nuestro contexto de BD
-            builder.Services.AddDbContext<MenuContext>(o =>
+            builder.Services.AddDbContext<ProductosContext>(o =>
             {
                 o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });

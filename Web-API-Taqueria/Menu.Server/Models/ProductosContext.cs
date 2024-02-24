@@ -2,22 +2,23 @@
 
 namespace Menu.Server.Models
 {
-    //add DbContext para erede de DB
-    public class MenuContext : DbContext
+
+    //add DbContext
+    public class ProductosContext : DbContext
     {
         //Constructor
-        public MenuContext(DbContextOptions<MenuContext> options) : base(options)
+        public ProductosContext(DbContextOptions<ProductosContext> options) : base(options)
         {
         }
 
-        //Creamos una propiedad Db Set para nuestra tbl
-        public DbSet<Menu> Menu { get; set; }
+        //Creamos una propiedad Db Set
+        public DbSet<Producto> Productos { get; set; }
 
         //Sobreescribimos un metodo _ para que el nombre de cada producto no se repita
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Menu>().HasIndex(c => c.Nombre).IsUnique();
+            modelBuilder.Entity<Producto>().HasIndex(c => c.Nombre).IsUnique();
         }
     }
 }
