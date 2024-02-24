@@ -12,19 +12,19 @@
     - <img src="/assets/img/02.png" width="80%">
 
 - Llegando hasta este paso definimos el nombre del proyecto y le damos en `Crear`
-<img src="/assets/img/03.png" width="80%">
+    <img src="/assets/img/03.png" width="80%">
 
 - Para empezar a crear nuestra API damos click derecho sobre nuestra soluccion nos deslizamos hasta la pestaña `Agregar` y seleccionamos  `Nuevo proyecto`
-<img src="/assets/img/04.png" width="80%">
+    <img src="/assets/img/04.png" width="80%">
 
-- Seleccionamos el tipo de proyecto  `ASP.NET Core Web API C#` y le damos click en `Siguiente`
-<img src="/assets/img/05.png" width="80%">
+    - Seleccionamos el tipo de proyecto  `ASP.NET Core Web API C#` y le damos click en `Siguiente`
+        <img src="/assets/img/05.png" width="80%">
 
-- Definimos el nombre del Proyecto de nuestra  que sera el servidor de nuestra  Web API le damos click en `Siguiente`
-<img src="/assets/img/06.png" width="80%">
+    - Definimos el nombre del Proyecto de nuestra  que sera el servidor de nuestra  Web API le damos click en `Siguiente`
+        <img src="/assets/img/06.png" width="80%">
 
-- Seleccionamos la configuracion deseada en este caso el Framework sera `.NET 8.0` sin Authentication de campo y con la configuracion que viene por defaul, para poder crear la soucion le damos click en `Crear`
-<img src="/assets/img/07.png" width="80%">
+    - Seleccionamos la configuracion deseada en este caso el Framework sera `.NET 8.0` sin Authentication de campo y con la configuracion que viene por defaul, para poder crear la soucion le damos click en `Crear`
+        <img src="/assets/img/07.png" width="80%">
 
 - Para poder trabajar con `SQL SERVER` necesitamos instalar algunos packetes para esto damos click derecho en nuestro proyecto, y nos deslizamos hasta donde este `Administrar paquetes NuGet para la solucion...`
 <img src="/assets/img/08.png" width="80%">
@@ -103,7 +103,7 @@ public class NameContext : DbContext
     });
 ```
 - Contodo esto listo podemos proceder a correr la migracion de base de datos para ello abrimos `Consola del Administrador` que se encuentra en la parte inferior izquierda del programa
-<img src="/assets/img/12.png" width="80%">
+    <img src="/assets/img/12.png" width="80%">
 
 - y corremos el siguiente `add-migration NameTbl` comando y esperamos a que realice la migracion de nuestra tabla a la base de datos
 ```PM
@@ -117,11 +117,11 @@ public class NameContext : DbContext
 ```
 
 - Comprobamos que nuesta bd, dirigiendonos a `SQL Server` se creo en sql damos en `New Query`
-```sql
-    use DataBaseName
-    select * from Nametbl
-```
-<img src="/assets/img/13.png" width="80%">
+    ```sql
+        use DataBaseName
+        select * from Nametbl
+    ```
+    <img src="/assets/img/13.png" width="80%">
 
 
 ### Creacion de Controladores del Proyecto
@@ -243,4 +243,43 @@ public class NameContext : DbContext
 
         }
     ```
-## Consumir la APi desde una WEB
+## Consumir la API desde una WEB
+
+Para consumir la Web-API
+
+- Lo primero que tenemos que hacer es agregar la aplicion web a nuestra Solucion, tendremos que dark click derecho desplazarnos hasta `Agregar` y `Nuevo Proyecto`
+    <img src="/assets/img/04.png" width="80%">
+
+    - Seleccionamos el tipo de proyecto  `Aplicacion web ASP.NET Core [Modelo-Vista-Controlador C#]` y le damos click en `Siguiente`
+        <img src="/assets/img/App_web01.png" width="80%">
+
+    - Definimos el nombre del Proyecto de nuestra aplicacion web y procedemos con click en `Siguiente`
+        <img src="/assets/img/App_web03.png" width="80%">
+
+    - Seleccionamos la configuracion deseada en este caso el Framework sera `.NET 8.0` sin Authentication de campo y con la configuracion que viene por defaul, para poder crear la soucion le damos click en `Crear`
+        <img src="/assets/img/App_web03.png" width="80%">
+
+- Como primer paso agregamos algo a nuestro `Program.cs` en nuestra solucion web y agregamos un servicio de tipo  `builder.Services.AddHttpClient();` despues de `builder.Services.AddControllersWithViews();`
+    ```C#
+        // Add services to the container.
+        builder.Services.AddControllersWithViews();
+        //Insertar aqui
+        var app = builder.Build();
+    ```
+    ```C#
+        builder.Services.AddHttpClient();
+    ```
+- Este servicio lo utilizamos para ser peticiones HTTP y de esta forma poder conectarnos a nuestra web api
+
+- Crearemos un modelo sobre nuestra capeta `Models` damos click derecho y `agregar` y seleccionamos `Clase...` para que sea del tipo `NameClassViewModel`
+    <img src="/assets/img/11.png" width="80%">
+    - Nos vamos al proyecto nuestra API y copiamos nuestra clase con sus los atrubutos definidos para tener disponible nuestra clase en el proyecto web
+    ```C#
+    public class NameClass
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal precio { get; set; }
+    }
+    ```
