@@ -331,7 +331,7 @@ Para consumir la Web-API
         <img src="/assets/img/App_web05.png" width="80%">
 
         - Seleccionamos una vista MVC de tipo `Vista de Razor`.
-            <img src="/assets/img/App_web05.png" width="80%">
+            <img src="/assets/img/App_web05.1.png" width="80%">
         
         -Dejamos la configuracion como esta y solo le damos en `agregar`
             <img src="/assets/img/App_web06.png" width="80%">
@@ -384,4 +384,4 @@ Para consumir la Web-API
     - ***NOTA para depurara los dos proyecto nos dirigimos a `Iniciar` y luego vamos a `Configurar proyetos de inicio...`
         <img src="/assets/img/dep-01.png" width="80%">
         - cambiamos de `Selecion actual` a `Varios proyectos de inicio` y seleccionamos los proyetos a ejecutar por el tipo de `Accion` y `Destino de depuracion` y le damos aceptar.
-            <img src="/assets/img/dep-01.png" width="80%">
+            <img src="/assets/img/dep-02.png" width="80%">
