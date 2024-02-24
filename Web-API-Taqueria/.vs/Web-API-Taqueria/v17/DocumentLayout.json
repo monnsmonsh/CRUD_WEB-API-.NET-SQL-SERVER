@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-taqueria\\menu.client\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|solutionrelative:menu.client\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-taqueria\\menu.client\\views\\producto\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|solutionrelative:menu.client\\views\\producto\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-taqueria\\menu.client\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|solutionrelative:menu.client\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-taqueria\\menu.client\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|solutionrelative:menu.client\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3AD811F3-D4B8-4848-BA84-3FB059C6E80A}|Menu.Client\\Menu.Client.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-taqueria\\menu.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\Menu.Client\\Views\\Producto\\Create.cshtml",
+              "RelativeDocumentMoniker": "Menu.Client\\Views\\Producto\\Create.cshtml",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\Menu.Client\\Views\\Producto\\Create.cshtml",
+              "RelativeToolTip": "Menu.Client\\Views\\Producto\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-24T05:27:28.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\Menu.Client\\Program.cs",
               "RelativeDocumentMoniker": "Menu.Client\\Program.cs",
@@ -34,8 +51,7 @@
               "RelativeToolTip": "Menu.Client\\Program.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAAACMAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-24T04:43:30.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-24T04:43:30.498Z"
             },
             {
               "$type": "Document",
@@ -52,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProductoController.cs",
               "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\Menu.Client\\Controllers\\ProductoController.cs",
               "RelativeDocumentMoniker": "Menu.Client\\Controllers\\ProductoController.cs",
               "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\Menu.Client\\Controllers\\ProductoController.cs",
               "RelativeToolTip": "Menu.Client\\Controllers\\ProductoController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAAC8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-24T04:16:49.968Z",
               "EditorCaption": ""

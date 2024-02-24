@@ -303,7 +303,7 @@ Para consumir la Web-API
     ```
 
 - Ahora debemos crear nuestros metodos
-    -Nuestro Primer metodo seria para listar nuestra API
+    - Para nuestro Primer metodo seria para listar nuestra API
     ```C#
         public async Task<IActionResult> Index()
         {
@@ -369,19 +369,92 @@ Para consumir la Web-API
         ```
     - Para poder correr nuestro programa de nuestro `index.cshtml` de nuestra clase modificamos nuestro archivo `Program.cs` modificando el `app.MapControllerRoute` en nuestro `controller=Home`.
     ```C#
-            app.MapControllerRoute(
-            name: "default",
-            //pattern: "{controller=Home}/{action=Index}/{id?}");
-            pattern: "{controller=Producto}/{action=Index}/{id?}");
+        app.MapControllerRoute(
+        name: "default",
+        //pattern: "{controller=Home}/{action=Index}/{id?}");
+        pattern: "{controller=Producto}/{action=Index}/{id?}");
 
-            app.Run();
+        app.Run();
+
     ```
+    - Para nuestro metodo de `create` en nuestra API.
+        ```C#
+            public IActionResult Create()
+            {
+                return View();
+            }
+
+            [HttpPost]
+            public async Task<IActionResult> Create(Producto producto)
+            {
+                if (ModelState.IsValid)
+                {
+                    var json = JsonConvert.SerializeObject(producto);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var response = await _httpClient.PostAsync("/api/Productos/crear", content);
+
+                    //si nos devuelve un codigo 200
+                    if (response.IsSuccessStatusCode)
+                    {
+
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Error al crear producto");
+                    }
+
+                }
+                return View(producto);
+
+            }
+        ```
+        - Y para moder crearlo desde nuestra web creamos una `vista` de razor en nuestro metodo `create` sin configuracion alguna. Ya que tengamos nuestra vista agregamos el modelo `@model Productos.Client.Models.ProductoViewModel`
+            ```cshtml
+                @model Productos.Client.Models.ProductoViewModel
+            ```
+        - Para poder guardar los datos de nuestra vista `create.cshtml` creamos un formulario `form asp-action="Create"` y los inputs donde recogemos la informacion `input asp-for="Nombre"` con su respectiva validacion `asp-validation-for="Nombre"`
+            ```cshtml
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Nombre">
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+                        <input asp-for="Descripcion" class="form-control" placeholder="Descripcion">
+                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+                        <input asp-for="Precio" class="form-control" placeholder="Precio">
+                        <span asp-validation-for="Precio" class="text-danger"></span>
+                    </div>
+                    <div class=" card-footer text-center">
+                        <div class="form-group">
+                            <input type="submit" value="Guardar" class="btn btn-outline-primary btn-sm" />
+                            <a asp-action="Index" class="btn btn-outline-success btn-sm">Volver a la Lista</a>
+                        </div>
+                    </div>
+                </form>
+            ```
 
 
 
 
 
-    - ***NOTA para depurara los dos proyecto nos dirigimos a `Iniciar` y luego vamos a `Configurar proyetos de inicio...`
-        <img src="/assets/img/dep-01.png" width="80%">
-        - cambiamos de `Selecion actual` a `Varios proyectos de inicio` y seleccionamos los proyetos a ejecutar por el tipo de `Accion` y `Destino de depuracion` y le damos aceptar.
-            <img src="/assets/img/dep-02.png" width="80%">
+
+
+
+
+
+**NOTA** para depurara los dos proyecto nos dirigimos a `Iniciar` y luego vamos a `Configurar proyetos de inicio...`.
+    
+<img src="/assets/img/dep-01.png" width="80%">
+
+- cambiamos de `Selecion actual` a `Varios proyectos de inicio` y seleccionamos los proyetos a ejecutar por el tipo de `Accion` y `Destino de depuracion` y le damos aceptar.
+    
+    <img src="/assets/img/dep-02.png" width="80%">

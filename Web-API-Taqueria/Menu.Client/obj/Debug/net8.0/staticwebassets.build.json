@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "nhzeIQB3bFozmgSKrHTPoomBJcz6tM5mxQm3yP/vDhs=",
+  "Hash": "LQ+qY8eOKELouqq/w1jdCdkHTkdGTH+yIW1MozESUPE=",
   "Source": "Menu.Client",
   "BasePath": "_content/Menu.Client",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Taqueria\\Menu.Server\\Menu.Server.csproj",
+      "Version": 2,
+      "Source": "Menu.Server",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "Menu.Client\\wwwroot",

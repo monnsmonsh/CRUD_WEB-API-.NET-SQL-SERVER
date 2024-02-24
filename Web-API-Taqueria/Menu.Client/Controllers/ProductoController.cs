@@ -1,6 +1,8 @@
 ﻿using Menu.Client.Models;
+using Menu.Server.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace Menu.Client.Controllers
 {
@@ -36,6 +38,39 @@ namespace Menu.Client.Controllers
             return View(new List<ProductoViewModel>());
 
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Producto producto)
+        {
+            if (ModelState.IsValid)
+            {
+                var json = JsonConvert.SerializeObject(producto);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync("/api/Productos/crear", content);
+
+                //si nos devuelve un codigo 200
+                if (response.IsSuccessStatusCode)
+                {
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Error al crear producto");
+                }
+
+            }
+            return View(producto);
+
+        }
+
+
 
     }
 }
