@@ -5,16 +5,16 @@
 ## Creacion de la API
 ### Inicializacion de un Proyecto
 
-- Para inicializar un proyecto en Visual Studio lo primero que tenemos que realizar es dirigimos a `Crear un Proyecto`
-    - <img src="/assets/img/01.png" width="80%">
+- Para inicializar un proyecto en Visual Studio lo primero que tenemos que realizar es dirigimos a `Crear un Proyecto`.
+    <img src="/assets/img/01.png" width="80%">
 
-- Posteriormente seleccionamos  el tipo de proyecto que necesitemos en este caso seleccionamos una `Solucion en Blanco` y le damos en `siguiente`
-    - <img src="/assets/img/02.png" width="80%">
+- Posteriormente seleccionamos  el tipo de proyecto que necesitemos en este caso seleccionamos una `Solucion en Blanco` y le damos en `siguiente`.
+    <img src="/assets/img/02.png" width="80%">
 
-- Llegando hasta este paso definimos el nombre del proyecto y le damos en `Crear`
+- Llegando hasta este paso definimos el nombre del proyecto y le damos en `Crear`.
     <img src="/assets/img/03.png" width="80%">
 
-- Para empezar a crear nuestra API damos click derecho sobre nuestra soluccion nos deslizamos hasta la pestaña `Agregar` y seleccionamos  `Nuevo proyecto`
+- Para empezar a crear nuestra API damos click derecho sobre nuestra soluccion nos deslizamos hasta la pestaña `Agregar` y seleccionamos  `Nuevo proyecto`.
     <img src="/assets/img/04.png" width="80%">
 
     - Seleccionamos el tipo de proyecto  `ASP.NET Core Web API C#` y le damos click en `Siguiente`
@@ -26,35 +26,35 @@
     - Seleccionamos la configuracion deseada en este caso el Framework sera `.NET 8.0` sin Authentication de campo y con la configuracion que viene por defaul, para poder crear la soucion le damos click en `Crear`
         <img src="/assets/img/07.png" width="80%">
 
-- Para poder trabajar con `SQL SERVER` necesitamos instalar algunos packetes para esto damos click derecho en nuestro proyecto, y nos deslizamos hasta donde este `Administrar paquetes NuGet para la solucion...`
-<img src="/assets/img/08.png" width="80%">
+- Para poder trabajar con `SQL SERVER` necesitamos instalar algunos packetes para esto damos click derecho en nuestro proyecto, y nos deslizamos hasta donde este `Administrar paquetes NuGet para la solucion...`.
+    <img src="/assets/img/08.png" width="80%">
 
-- Seleccionamos e instalamos los siguientes packetes para nuestro proyecto
-<img src="/assets/img/09.png" width="80%">
+    - Seleccionamos e instalamos los siguientes packetes para nuestro proyecto
+    <img src="/assets/img/09.png" width="80%">
 
 - Listo todo esto podemos empezar a crear nuestro proyecto lo primero que tenemos que hacer es crear una carpeta con el nombre `Models` para esto damos click derecho sobre nuestro proyecto nos desplazamos hasta agregar y seleccionamos nueva carpeta
-<img src="/assets/img/10.png" width="80%">
+    <img src="/assets/img/10.png" width="80%">
 
-- En la carpeta `Models` creamos una clase que no representara nuestra entidad para esto sobre la carpeta damos click derecho y `agregar` y seleccionamos `Clase...`
-<img src="/assets/img/11.png" width="80%">
+    - En la carpeta `Models` creamos una clase que no representara nuestra entidad para esto sobre la carpeta damos click derecho y `agregar` y seleccionamos `Clase...`
+    <img src="/assets/img/11.png" width="80%">
 
-- Definimos los atrubutos de nuestra clase
-```C#
-public class NameClass
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public decimal precio { get; set; }
-}
-```
+    - Definimos los atrubutos de nuestra clase
+    ```C#
+    public class NameClass
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal precio { get; set; }
+    }
+    ```
 
-- Si queremos podemos definir nuestros campos
-```C#
-    [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
-    [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-    public string Nombre { get; set; } = null!;
-```
+    - Si queremos podemos definir nuestros campos
+    ```C#
+        [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public string Nombre { get; set; } = null!;
+    ```
 
 
 ### Conexion y Migracion a SQL SERVER 
@@ -251,6 +251,7 @@ Para consumir la Web-API
     <img src="/assets/img/04.png" width="80%">
 
     - Seleccionamos el tipo de proyecto  `Aplicacion web ASP.NET Core [Modelo-Vista-Controlador C#]` y le damos click en `Siguiente`
+        
         <img src="/assets/img/App_web01.png" width="80%">
 
     - Definimos el nombre del Proyecto de nuestra aplicacion web y procedemos con click en `Siguiente`
@@ -283,3 +284,104 @@ Para consumir la Web-API
         public decimal precio { get; set; }
     }
     ```
+- Sobre nuestra carperta `Controller` agregamos un controlador dando click derecho sobre la carpeta `Controller` moviendonos hasta `Agregar` y Selccionamos `Controlador`.
+    <img src="/assets/img/14.png" width="80%">
+
+    - se nos desplegara la siguiente ventana donde Seleccionaremos un Controlador de tipo MVC `Controlador de MVC: en blanco` le damos en agregar el le colocamos el nombre de nuestra clase `ClassController`.
+        <img src="/assets/img/App_web04.png" width="80%">
+    
+    -Inyectamos nuestro servicio HTTP en nuestro controlador
+    ```C#
+        //inyectamos nuestro servicio HTTPCLIENT
+        private readonly HttpClient _httpClient;
+        public ProductoController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClient = httpClientFactory.CreateClient();
+            //local host de Productos.Server
+            _httpClient.BaseAddress = new Uri("https://localhost:7053/api");//Direccion local de nuestra API
+        }
+    ```
+
+- Ahora debemos crear nuestros metodos
+    -Nuestro Primer metodo seria para listar nuestra API
+    ```C#
+        public async Task<IActionResult> Index()
+        {
+            //realizamos nuestra solicitud a nuestra WEB-API
+            var response = await _httpClient.GetAsync("/api/Productos/lista");
+
+            //validamos la respuesta
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                //Creamos una var PRODUCTO para deserializar la respuesta
+                var productos = JsonConvert.DeserializeObject<IEnumerable<ProductoViewModel>>(content);
+
+                return View("Inicio", productos);
+            }
+
+            //si no devuelve code 200
+            //devolvemos una lsita vavcio
+            return View(new List<ProductoViewModel>());
+
+        }
+    ```
+    - Despues de Tener nuestro Metodo en nuestro Controlador agregamos nuestra vista en este caso seria `Index` para esto debemos dar click derecho sobre ella y seleccionamos `Agregar Vista...`.
+        <img src="/assets/img/App_web05.png" width="80%">
+
+        - Seleccionamos una vista MVC de tipo `Vista de Razor`.
+            <img src="/assets/img/App_web05.png" width="80%">
+        
+        -Dejamos la configuracion como esta y solo le damos en `agregar`
+            <img src="/assets/img/App_web06.png" width="80%">
+
+        -Pasamos el modelo a nuestra vista `index.cshtml` este tiene que esta al inicio del documento
+        ```cshtml
+            @model IEnumerable<ProductoViewModel>
+        ```
+        -Para poder obtener el nombre de las columnas de nuestra tabla en nuestro `index.cshtml`las mandamos llamar de esta manera
+        ```cshtml
+            @Html.DisplayNameFor(model => model.Nombre)
+        ```
+        -Para listar todos los datos  de nuestra tabla en el `index.cshtml`las mandamos llamar mediante un ciclo.
+        ```cshtml
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        ```
+    - Para poder correr nuestro programa de nuestro `index.cshtml` de nuestra clase modificamos nuestro archivo `Program.cs` modificando el `app.MapControllerRoute` en nuestro `controller=Home`.
+    ```C#
+            app.MapControllerRoute(
+            name: "default",
+            //pattern: "{controller=Home}/{action=Index}/{id?}");
+            pattern: "{controller=Producto}/{action=Index}/{id?}");
+
+            app.Run();
+    ```
+
+
+
+
+
+    - ***NOTA para depurara los dos proyecto nos dirigimos a `Iniciar` y luego vamos a `Configurar proyetos de inicio...`
+        <img src="/assets/img/dep-01.png" width="80%">
+        - cambiamos de `Selecion actual` a `Varios proyectos de inicio` y seleccionamos los proyetos a ejecutar por el tipo de `Accion` y `Destino de depuracion` y le damos aceptar.
+            <img src="/assets/img/dep-01.png" width="80%">
