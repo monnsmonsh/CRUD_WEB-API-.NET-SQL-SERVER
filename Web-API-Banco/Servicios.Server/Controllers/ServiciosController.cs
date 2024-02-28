@@ -22,7 +22,7 @@ namespace Servicios.Server.Controllers
         [HttpPost]
         [Route("crear")]
         //Metodo para guardar en BD
-        public async Task<IActionResult> CrearProducto(Servicio servicio)
+        public async Task<IActionResult> CrearServicio(Servicio servicio)
         {
             //guardamos en BD en la tblname, pasando el parametro
             await _context.Servicios.AddAsync(servicio);
