@@ -84,12 +84,13 @@ namespace Menu.Server.Controllers
         [HttpDelete]
         [Route("eliminar")]
         //Metodo para editar un producto
-        public async Task<IActionResult> EliminarProducto(int id, Producto producto)
+        public async Task<IActionResult> EliminarProducto(int id)
         {
-            var productoeliminado = await _context.Productos.FindAsync(id);
+            //Eliminar producto de la base de datos
+            var productoEliminado = await _context.Productos.FindAsync(id);
 
             //aplicamos metod del parametro
-            _context.Productos.Remove(productoeliminado);
+            _context.Productos.Remove(productoEliminado!);
 
             await _context.SaveChangesAsync();
             return Ok();

@@ -48,11 +48,6 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": false
-      },
-      {
-        "Name": "producto",
-        "Type": "Menu.Server.Models.Producto",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

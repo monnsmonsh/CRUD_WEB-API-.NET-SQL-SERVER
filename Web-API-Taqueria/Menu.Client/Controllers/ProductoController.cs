@@ -147,7 +147,7 @@ namespace Menu.Client.Controllers
         // Metodo para eliminar
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"/api/Productos/eliminar?id={id}");
+            var response = await _httpClient.DeleteAsync($"api/Productos/eliminar?id={id}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -155,8 +155,8 @@ namespace Menu.Client.Controllers
             }
             else
             {
-                TempData["Erro"] = "Error al eliminar Producto";
-                return RedirectToAction("Index");
+                TempData["Error"] = "Error al eliminar Producto";
+                return RedirectToAction("Details");
             }
 
         }

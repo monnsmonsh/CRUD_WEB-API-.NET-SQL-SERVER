@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6204139F-9BAD-433B-A58F-D5C8C3C76DB8}|Servicios.Server\\Servicios.Server.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-banco\\servicios.server\\controllers\\servicioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6204139F-9BAD-433B-A58F-D5C8C3C76DB8}|Servicios.Server\\Servicios.Server.csproj|solutionrelative:servicios.server\\controllers\\servicioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{89277735-EA31-46BC-979E-4E1CF5CC76A4}|Servicios.Client\\Servicios.Client.csproj|c:\\users\\monnsmonsh\\documents\\githubproyects\\crud_web-api-.net-sql-server\\web-api-banco\\servicios.client\\controllers\\serviciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89277735-EA31-46BC-979E-4E1CF5CC76A4}|Servicios.Client\\Servicios.Client.csproj|solutionrelative:servicios.client\\controllers\\serviciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "ServicioController.cs",
+              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Client\\Controllers\\ServicioController.cs",
+              "RelativeDocumentMoniker": "Servicios.Client\\Controllers\\ServicioController.cs",
+              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Client\\Controllers\\ServicioController.cs",
+              "RelativeToolTip": "Servicios.Client\\Controllers\\ServicioController.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAqwJcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T07:50:29.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Client\\Views\\Servicio\\Index.cshtml",
               "RelativeDocumentMoniker": "Servicios.Client\\Views\\Servicio\\Index.cshtml",
@@ -35,32 +44,6 @@
               "ViewState": "AQIAACIAAAAAAAAAAAAAADYAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-02-28T06:48:51.874Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServiciosController.cs",
-              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Server\\Controllers\\ServiciosController.cs",
-              "RelativeDocumentMoniker": "Servicios.Server\\Controllers\\ServiciosController.cs",
-              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Server\\Controllers\\ServiciosController.cs",
-              "RelativeToolTip": "Servicios.Server\\Controllers\\ServiciosController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAAAGIAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T06:25:27.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServicioController.cs",
-              "DocumentMoniker": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Client\\Controllers\\ServicioController.cs",
-              "RelativeDocumentMoniker": "Servicios.Client\\Controllers\\ServicioController.cs",
-              "ToolTip": "C:\\Users\\monnsmonsh\\Documents\\GitHubProyects\\CRUD_WEB-API-.NET-SQL-SERVER\\Web-API-Banco\\Servicios.Client\\Controllers\\ServicioController.cs",
-              "RelativeToolTip": "Servicios.Client\\Controllers\\ServicioController.cs",
-              "ViewState": "AQIAAIMAAAAAAAAAAAAmwJAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T06:15:30.164Z",
               "EditorCaption": ""
             }
           ]

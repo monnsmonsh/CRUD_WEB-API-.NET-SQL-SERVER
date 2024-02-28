@@ -152,21 +152,22 @@ namespace Servicios.Client.Controllers
 
         //
         // Metodo para eliminar
-        public async Task<IActionResult>Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"/api/Servicios/eliminar?id={id}");
-            //var response = await _httpClient.DeleteAsync($"/api/Servicios/eliminar?id={id}");
+            //api/Servicios/eliminar?id=6
+            var response = await _httpClient.DeleteAsync($"api/Servicios/eliminar?id={id}");
 
             if (response.IsSuccessStatusCode)
             {
+                // Maneja el caso de eliminación exitosa, por ejemplo, redirigiendo a la página de lista de productos.
                 return RedirectToAction("Index");
             }
             else
             {
-                TempData["Erro"] = "Error al eliminar Servicio";
+                // Maneja el caso de error en la solicitud DELETE, por ejemplo, mostrando un mensaje de error.
+                TempData["Error"] = "Error al eliminar el producto.";
                 return RedirectToAction("Index");
             }
-
         }
 
     }
