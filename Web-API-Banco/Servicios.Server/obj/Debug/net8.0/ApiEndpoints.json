@@ -48,11 +48,6 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": false
-      },
-      {
-        "Name": "servicios",
-        "Type": "Servicios.Server.Models.Servicio",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

@@ -91,12 +91,12 @@ namespace Servicios.Server.Controllers
         [HttpDelete]
         [Route("eliminar")]
         //Metodo para editar un producto
-        public async Task<IActionResult> EliminarServicio(int id, Servicio servicios)
+        public async Task<IActionResult> EliminarServicio(int id)
         {
-            var servicioeliminado = await _context.Servicios.FindAsync(id);
+            var servicioEliminado = await _context.Servicios.FindAsync(id);
 
             //aplicamos metod del parametro
-            _context.Servicios.Remove(servicioeliminado);
+            _context.Servicios.Remove(servicioEliminado!);
 
             await _context.SaveChangesAsync();
             return Ok();
