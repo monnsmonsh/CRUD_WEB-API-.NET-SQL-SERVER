@@ -1,0 +1,96 @@
+[
+  {
+    "ContainingType": "Servicios.Server.Controllers.ServiciosController",
+    "Method": "CrearProducto",
+    "RelativePath": "api/Servicios/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "servicio",
+        "Type": "Servicios.Server.Models.Servicio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Servicios.Server.Controllers.ServiciosController",
+    "Method": "ActualizarServicio",
+    "RelativePath": "api/Servicios/editar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "servicio",
+        "Type": "Servicios.Server.Models.Servicio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Servicios.Server.Controllers.ServiciosController",
+    "Method": "EliminarServicio",
+    "RelativePath": "api/Servicios/eliminar",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "servicios",
+        "Type": "Servicios.Server.Models.Servicio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Servicios.Server.Controllers.ServiciosController",
+    "Method": "ListarServicios",
+    "RelativePath": "api/Servicios/lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Servicios.Server.Models.Servicio, Servicios.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Servicios.Server.Controllers.ServiciosController",
+    "Method": "VerProducto",
+    "RelativePath": "api/Servicios/ver",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
