@@ -70,6 +70,99 @@ namespace Menu.Client.Controllers
 
         }
 
+        //
+        /// Editar producto
+        public async Task<IActionResult> Edit(int id)
+        {
+            var response = await _httpClient.GetAsync($"api/Productos/ver?id={id}");
+
+            //validamos el codigo de respuesta
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                var producto = JsonConvert.DeserializeObject<ProductoViewModel>(content);
+                return View(producto);
+            }
+            else//en caso de que no debuelva code200
+            {
+                return RedirectToAction("Details");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, ProductoViewModel producto)
+        {
+            if (ModelState.IsValid)
+            {
+                var json = JsonConvert.SerializeObject(producto);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                //ruta que se encuentra en el controlador
+                var response = await _httpClient.PutAsync($"/api/Productos/editar?id={id}", content);
+
+                //validamos la respuesta
+                if (response.IsSuccessStatusCode)
+                {
+                    // Manejamos la ctualización exitosa, redirigiendonos a la página de detalles del producto.
+                    return RedirectToAction("Index", new { id });
+
+                }
+                else
+                {
+                    // Manejamos el error en la solicitud PUT o POST, mostrando un mensaje de error.
+                    ModelState.AddModelError(string.Empty, "Error al actualizar el producto.");
+
+                }
+
+            }
+
+            // Si hay errores de validación, volvemos a mostrar el formulario de edición con los errores.
+            return View(producto);
+        }
+
+        //
+        // Monstrar un producto en expecifico
+        public async Task<IActionResult>Details(int id)
+        {
+            var response = await _httpClient.GetAsync($"api/Productos/ver?id={id}");
+
+            //validamos el codigo de respuesta
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                var producto = JsonConvert.DeserializeObject<ProductoViewModel>(content);
+
+                return View(producto);
+
+            }
+            else
+            {
+                return RedirectToAction("Details");
+            }
+        }
+
+        //
+        // Metodo para eliminar
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"/api/Productos/eliminar?id={id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["Erro"] = "Error al eliminar Producto";
+                return RedirectToAction("Index");
+            }
+
+        }
+
+
+
 
 
     }

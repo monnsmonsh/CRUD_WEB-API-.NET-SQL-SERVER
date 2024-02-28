@@ -85,12 +85,20 @@ public class NameContext : DbContext
 }
 ```
 - Ahora nos vamos a configurar nuestra cadena de conexion con `SQL SERVER` para esto abrimos nuestro archivo que se encuentra en raiz con el nombre `appsettings.json` despues de `AllowedHost` definiendo nuestros datos de conexion `Catolog`(Nombre de la BD) `ID`(nombre de usario) `Password`(contraseña)
-```json
-//Configuramos nuestra cadena de conexion
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=(local);Initial Catalog=NAMEBD;Persist Security Info=True;User ID=USERSQL;Password=PASS-SQL;MultipleActiveResultSets=True;TrustServerCertificate=True"
+    -Configuracion SQL SERVER
+    ```json
+    //Configuramos nuestra cadena de conexion
+    "ConnectionStrings": {
+        "DefaultConnection": "Data Source=(local);Initial Catalog=NAMEBD;Persist Security Info=True;User ID=USERSQL;Password=PASS-SQL;MultipleActiveResultSets=True;TrustServerCertificate=True"
+    ```
 
-```
+    - Configuracion SQL SERVER
+    ```json
+        //Configuramos nuestra cadena de conexion
+        "ConnectionStrings": {
+            "DefaultConnection": "Server=DESKTOP-GF7RUMJ\\SQLEXPRESS;Database=NAMEBD;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=false "
+    ```
+
 - Despues nos dirigimos a `Program.cs` donde insertamos nuestro contexto de nuesta BD debajado de `builder.Services.AddControllers();`
 ```C#
     builder.Services.AddControllers();
@@ -441,15 +449,189 @@ Para consumir la Web-API
                     </div>
                 </form>
             ```
+        - Para nuestro metodo de `edith` en nuestra API primero creamos nuestra vista y luego nuestro metodo de tipo `POST` en el cual se le pasan dos parametros `int id` y un objeto del tipo producto `Producto producto`.
+        ```C#
+            public async Task<IActionResult>Edit(int id)
+            {
+                var response = await _httpClient.GetAsync($"api/Productos/ver?id={id}");
+
+                //validamos el codigo de respuesta
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    var producto = JsonConvert.DeserializeObject<ProductoViewModel>(content);
+                    return View(producto);
+                }
+                else//en caso de que no debuelva code200
+                {
+                    return RedirectToAction("Details");
+                }
+            }
+
+            [HttpPost]
+            public async Task<IActionResult>Edit(int id, Producto producto)
+            {
+                if (ModelState.IsValid)
+                {
+                    var json = JsonConvert.SerializeObject(producto);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var response = await _httpClient.PutAsync($"/api/Productos/editar?id={id}", content);
+
+                    //validamos la respuesta
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Manejamos la ctualización exitosa, redirigiendonos a la página de detalles del producto.
+                        return RedirectToAction("Index", new { id });
+
+                    }
+                    else
+                    {
+                        // Manejamos el error en la solicitud PUT o POST, mostrando un mensaje de error.
+                        ModelState.AddModelError(string.Empty, "Error al actualizar el producto.");
+                    
+                    }
+
+                }
+
+                // Si hay errores de validación, volvemos a mostrar el formulario de edición con los errores.
+                return View(producto);
+            }
+        ```
+        - Y para moder editarlo desde nuestra web creamos una `vista` de razor en nuestro metodo `edit` sin configuracion alguna. Ya que tengamos nuestra inyectamos el modelo `@model Menu.Client.Models.ErrorViewModel` en nuestra vista `edit.cshtml`
+        ```cshtml
+            @model Menu.Client.Models.ProductoViewModel
+
+            <div class=" card text-primary">
+                <div class="card-header text-center">
+                    <h5>Editar Producto</h5>
+                </div>
+                <div class=" card-body text-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form asp-action="Edit">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="Id" />
+                                <div class="form-group">
+                                    <label asp-for="Nombre" class="control-label"></label>
+                                    <input asp-for="Nombre" class="form-control" />
+                                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Descripcion" class="control-label"></label>
+                                    <textarea asp-for="Descripcion" class="form-control"></textarea>
+                                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Precio" class="control-label"></label>
+                                    <input asp-for="Precio" class="form-control" />
+                                    <span asp-validation-for="Precio" class="text-danger"></span>
+                                </div>
+                                <div class=" card-footer text-center">
+                                    <div class="form-group">
+                                        <input type="submit" value="Guardar" class="btn btn-outline-primary btn-sm" />
+                                        <a asp-action="Index" class="btn btn-outline-success btn-sm">Volver a la lista</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        ```
+    - Para nuestro metodo de `details` en nuestra API, le pasamos un parametro que es nuestro `int id`
+    ```C#
+        // Monstrar un producto en expecifico
+        public async Task<IActionResult> Details(int id)
+        {
+            var response = await _httpClient.GetAsync($"api/Productos/ver?id={id}");
+
+            //validamos el codigo de respuesta
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                var producto = JsonConvert.DeserializeObject<ProductoViewModel>(content);
+
+                return View(producto);
+
+            }
+            else
+            {
+                return RedirectToAction("Details");
+            }
+        }
+    ```
+    - Para poder visualizar nuestro metodo `details` en nuestra web creamos una `vista` de razor en nuestro metodo `details` sin configuracion alguna. Ya que tengamos nuestra inyectamos el modelo `@model Menu.Client.Models.ErrorViewModel` en nuestra vista `edit.cshtml`.
+    ```cshtml
+        @model Menu.Client.Models.ProductoViewModel
+        <div class=" card text-primary">
+            <div class=" card-header text-center ">
+                <h5>Producto</h5>
+            </div>
+            <div class=" card-body ">
+                <dl class="row">
+                    <dt class="col-sm-2 text-center text-dark">
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+
+                    <dt class="col-sm-2 text-center text-dark">
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Descripcion)
+                    </dd>
+
+                    <dt class="col-sm-2 text-center text-dark">
+                        @Html.DisplayNameFor(model => model.Precio)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Precio)
+                    </dd>
+
+                </dl>
+            </div>
+            <div class=" card-footer text-center">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-warning btn-sm">Editar</a>
+                <a asp-action="Index" class=" btn btn-outline-success btn-sm">volver a la lista</a>
+            </div>
+        </div>
+    ```
+
+
+    - Para nuestro metodo de `delet` en nuestra API, volvemos a crear un metodo del tipo asincrono donde le pasamos un parametro que es nuestro `int id`
+    
+    ```C#
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"/api/Productos/eliminar?id={id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["Erro"] = "Error al eliminar Producto";
+                return RedirectToAction("Index");
+            }
+
+        }
+    ```
 
 
 
 
 
 
-
-
-
+<br>
+<br>
+<br>
 
 **NOTA** para depurara los dos proyecto nos dirigimos a `Iniciar` y luego vamos a `Configurar proyetos de inicio...`.
     
